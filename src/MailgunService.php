@@ -38,7 +38,7 @@ class MailgunService implements MailServiceInterface {
         $mg = Mailgun::create($this->apiKey);
         $result = $mg->messages()->send($this->domain, $this->message);
 
-        return ($result->getMessage() == "Queued. Thank you") ? true : false;
+        return ($result->getMessage() == "Queued. Thank you.") ? true : false;
     }
 
     /**
@@ -94,7 +94,7 @@ class MailgunService implements MailServiceInterface {
      */
     public function from($email, $name=null)
     {
-        if (!empty($name)) {
+        if (empty($name)) {
             $this->message['from'] = $email;
         } else {
             $this->message['from'] = "{$name} <{$email}>";
