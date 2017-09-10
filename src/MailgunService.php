@@ -14,7 +14,7 @@ class MailgunService implements MailServiceInterface {
 
     public function __construct($config = [])
     {
-        if (is_array($config) && empty($config)) {
+        if (is_array($config) && !empty($config)) {
             foreach ($config as $key => $value) {
                 if (property_exists($this, $key)) {
                     $this->$key = $value;
@@ -36,7 +36,9 @@ class MailgunService implements MailServiceInterface {
     public function send($clear_after=true)
     {
         $mg = Mailgun::create($this->apiKey);
-        $mg->messages()->send($this->domain, $this->message);
+        $result = $mg->messages()->send($this->domain, $this->message);
+
+        return ($result->getMessage() == "Queued. Thank you") ? true : false;
     }
 
     /**
