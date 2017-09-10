@@ -1,0 +1,25 @@
+{
+  "name": "gameap/mailgun-service",
+  "description": "Mailgun mailer for GameAPl",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nikita Kuznetsov",
+      "email": "nikita.hldm@gmail.com",
+      "role": "Developer",
+      "homepage": "https://github.com/ET-Nik"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "mailgun/mailgun-php": "^2.3",
+    "php-http/curl-client": "^1.7",
+    "guzzlehttp/psr7": "^1.4"
+  },
+  "require-dev": {
+    "codeception/codeception": "^2.2"
+  },
+  "autoload-dev": {
+    "files": ["GameAP/vendor/autoload.php"]
+  }
+}
