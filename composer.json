@@ -23,8 +23,5 @@
     "psr-4": {
       "gameap\\mail\\": "src/"
     }
-  },
-  "autoload-dev": {
-    "files": ["GameAP/vendor/autoload.php"]
   }
 }
